@@ -4,7 +4,7 @@
   "description": "",
   "main": "desafio13.js",
   "scripts": {
-    "start": "nodemon  ./src/desafio13.js"
+    "start": "node  ./src/desafio13.js"
   },
   "author": "",
   "license": "",
