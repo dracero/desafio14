@@ -39,7 +39,7 @@ window.addEventListener('load',()=>{
             price :  document.getElementsByName('price')[0].value,
             thumbnail :  document.getElementsByName('thumbnail')[0].value,
         }
-        fetch('http://localhost:8080/api/productos/guardar',{ 
+        fetch('https://desafio13.herokuapp.com/api/productos/guardar',{ 
             headers: {
                 'Content-Type': 'application/json'
             },
