@@ -1,0 +1,4 @@
+{
+    "MONGO_URL": "mongodb+srv://root:root123*@cluster0.zf9fl.mongodb.net/productos?retryWrites=true&w=majority"
+
+}
