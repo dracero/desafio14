@@ -4,9 +4,17 @@ const productModel = require('../models/modProd')
 const faker = require('faker')
 faker.locale = "es";
 
+
+
 router.get('/vista',async (req,res)=>{
     const productos = await productModel.getAll()
-    res.render('vista',{ layout: 'vista-layout',productos: productos, hayProductos:  productos.length ? true : false})
+    res.render('vista',
+      { layout: 'index',
+        productos: productos, 
+        hayProductos:  productos.length ? true : false,
+      
+
+      })
   })
 
 router.get('/vista-test',async (req, res) => {

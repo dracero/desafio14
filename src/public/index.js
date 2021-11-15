@@ -6,8 +6,6 @@ window.addEventListener('load',()=>{
     // Template en handlebars
     var template = Handlebars.compile(`
     <h4 class="text-light">Vista de Productos</h1>
-    <table>
-    <tr>
     <br>
     
     {{#if hayProductos}} 
@@ -22,13 +20,12 @@ window.addEventListener('load',()=>{
     {{else}}  
         <span class="d-flex  alert bg-secondary text-light">No se encontraron productos</span>
     {{/if}}
-    </tr>
-    </table>
     `)
     
     
     socket.on('productos',productos =>{
         var HTML = template({productos: productos,hayProductos: productos.length ? true : false })
+        console.log(productos)
         document.querySelector('#productos').innerHTML = HTML
     })
 
@@ -39,7 +36,7 @@ window.addEventListener('load',()=>{
             price :  document.getElementsByName('price')[0].value,
             thumbnail :  document.getElementsByName('thumbnail')[0].value,
         }
-        fetch('https://desafio13.herokuapp.com/api/productos/guardar',{ 
+        fetch('http://localhost:8080/api/productos/guardar',{ 
             headers: {
                 'Content-Type': 'application/json'
             },
